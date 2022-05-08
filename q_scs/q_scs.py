@@ -1650,9 +1650,9 @@ class qScs:
                 junction = "Junction: Junction-{}\n     Last Modified Date: {}\n     Last Modified Time: {}\n" \
                            "     Canvas X: {}\n     Canvas Y: {}\n     From Canvas X: {}\n     From Canvas Y: {}\n     Downstream: {}\nEnd:\n"
                 reach = "Reach: {}\n     Last Modified Date: {}\n     Last Modified Time: {}\n     Canvas X: {}\n     Canvas Y: {}\n" \
-                        "     From Canvas X: {}\n     From Canvas Y: {}\n     Downstream: {}\n\n     Route: Kinematic Wave\n     Channel: Kinematic Wave\n" \
-                        "     Length: {}\n     Energy Slope: {}\n     Mannings n: {}\n     Shape: Trapezoid\n     Number of Subreaches: {}\n     Width: {}\n" \
-                        "     Side Slope: {}\n     Initial Variable: Combined Inflow\n     Index Parameter Type: Index Flow\n     Index Flow: {}\n     Channel Loss: None\nEnd:\n"
+                        "     From Canvas X: {}\n     From Canvas Y: {}\n     Downstream: {}\n\n     Route: Muskingum Cunge\n     Channel: Trapezoid\n" \
+                        "     Length: {}\n     Energy Slope: {}\n     Mannings n: {}\n     Bottom Width: {}\n     Side Slope: {}\n     Initial Variable: Combined Inflow\n" \
+                        "     Space-Time Method: Automatic DX and DT\n     Index Parameter Type: Index Flow\n     Index Flow: {}\n     Maximum Depth Iterations: 20\n     Maximum Route Step Iterations: 30\n     Channel Loss: None\nEnd:\n"
                 sink = "Sink: Sink-{}\n     Last Modified Date: {}\n     Last Modified Time: {}\n     Canvas X: {}\n     Canvas Y: {}\n     From Canvas X: {}\n     From Canvas Y: {}\nEnd:"
 
                 catchment = self.allOutputs['allinone_saved']
@@ -1773,7 +1773,7 @@ class qScs:
                     wid = 3
                     sidslope = 0.5
                     indflow = 10
-                    text = text.format(id, date, time, cx, cy, fx, fy, downst, leng, slope, n, nos, wid, sidslope,
+                    text = text.format(id, date, time, cx, cy, fx, fy, downst, leng, slope, n, wid, sidslope,
                                        indflow)
                     Reaches.append(text)
                 for f in sub_junctions.getFeatures():
