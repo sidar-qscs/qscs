@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/q_scs" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
